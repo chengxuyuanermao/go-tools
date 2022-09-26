@@ -1,4 +1,4 @@
-module github.com/chengxuyuanermao/go-tools
+module github.com/chengxuyuanermao/goTools
 
 go 1.17
 
