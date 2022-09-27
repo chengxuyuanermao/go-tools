@@ -1,5 +1,8 @@
 package main
 
+import "github.com/chengxuyuanermao/goTools/urfaveCli"
+
 func main() {
-	//goVersion.Use()
+	//urfaveCli.Use2()
+	urfaveCli.Main()
 }
