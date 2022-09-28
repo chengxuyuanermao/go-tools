@@ -1,4 +1,4 @@
-package main
+package goCache
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func main() {
+func Use() {
 	// Create a cache with a default expiration time of 5 minutes, and which
 	// purges expired items every 10 minutes
 	c := cache.New(5*time.Minute, 10*time.Minute)
