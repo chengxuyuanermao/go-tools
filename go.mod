@@ -12,26 +12,27 @@ require (
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/shirou/gopsutil v3.21.11+incompatible
 	github.com/urfave/cli v1.22.10
+	gorm.io/driver/mysql v1.4.0
+	gorm.io/driver/sqlite v1.4.1
+	gorm.io/gorm v1.24.0
 )
 
 require (
-	github.com/cosmtrek/air v1.40.4 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.0-20190314233015-f79a8a8ca69d // indirect
-	github.com/creack/pty v1.1.18 // indirect
-	github.com/fatih/color v1.13.0 // indirect
-	github.com/fsnotify/fsnotify v1.5.4 // indirect
 	github.com/go-ole/go-ole v1.2.6 // indirect
-	github.com/imdario/mergo v0.3.13 // indirect
+	github.com/go-sql-driver/mysql v1.6.0 // indirect
+	github.com/jinzhu/inflection v1.0.0 // indirect
+	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
-	github.com/mattn/go-colorable v0.1.13 // indirect
-	github.com/mattn/go-isatty v0.0.16 // indirect
-	github.com/pelletier/go-toml v1.9.5 // indirect
+	github.com/mattn/go-sqlite3 v1.14.15 // indirect
 	github.com/russross/blackfriday/v2 v2.0.1 // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
+	github.com/stretchr/testify v1.7.1 // indirect
 	github.com/tklauser/go-sysconf v0.3.10 // indirect
 	github.com/tklauser/numcpus v0.4.0 // indirect
 	github.com/yusufpapurcu/wmi v1.2.2 // indirect
 	golang.org/x/crypto v0.0.0-20211215153901-e495a2d5b3d3 // indirect
 	golang.org/x/sys v0.0.0-20220928140112-f11e5e49a4ec // indirect
 	golang.org/x/text v0.3.7 // indirect
+	gopkg.in/yaml.v3 v3.0.0 // indirect
 )
