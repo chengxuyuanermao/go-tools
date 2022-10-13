@@ -13,7 +13,7 @@ type BlogArticle struct {
 	Content string
 }
 
-func (ba BlogArticle) TableName() string {
+func (ba BlogArticle) TableName() string { // gorm会自动把table带上s，此处重新定义表名
 	return "blog_article"
 }
 
@@ -27,6 +27,6 @@ func UseMysql() {
 	}
 
 	ba := &BlogArticle{Title: "testGorm", Content: "testing"}
-	result := db.Create(&ba)
+	result := db.Select("Title", "Content").Create(&ba)
 	fmt.Println(result)
 }

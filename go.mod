@@ -9,6 +9,7 @@ require (
 	github.com/go-playground/validator/v10 v10.11.1
 	github.com/hashicorp/go-version v1.6.0
 	github.com/mozillazg/go-pinyin v0.19.0
+	github.com/name5566/leaf v0.0.0-20200516012428-8592b1abbbbe
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/shirou/gopsutil v3.21.11+incompatible
 	github.com/urfave/cli v1.22.10
