@@ -9,6 +9,10 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
+/**
+https://www.liwenzhou.com/posts/Go/zap/
+*/
+
 var sugarLogger *zap.SugaredLogger
 
 func Use() {
