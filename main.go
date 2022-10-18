@@ -1,7 +1,8 @@
 package main
 
-import "github.com/chengxuyuanermao/goTools/gorm"
+import "github.com/chengxuyuanermao/goTools/time"
 
 func main() {
-	gorm.UseMysql()
+	time.Test()
+	//time.BlockMain()
 }

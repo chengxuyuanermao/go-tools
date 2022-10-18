@@ -7,6 +7,12 @@ import (
 )
 
 // 参考：https://studygolang.com/articles/20640
+/**
+原生timer：
+	延迟执行
+	定时执行（执行几次后退出 和 循环执行不退出）
+leaf-timer
+*/
 
 // 延时两秒执行 time.After(time.Second * 2)
 func UseAfter() {
@@ -51,7 +57,7 @@ func UseTick() {
 	}
 }
 
-// leaf中的timer
+// leaf中的timer -- 定时执行
 func ExampleTimer() {
 	d := timer.NewDispatcher(10) // 实例化一个新的调度器
 
