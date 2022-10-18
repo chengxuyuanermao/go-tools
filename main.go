@@ -1,8 +1,7 @@
 package main
 
-import "github.com/chengxuyuanermao/goTools/time"
+import "github.com/chengxuyuanermao/goTools/fsm"
 
 func main() {
-	time.Test()
-	//time.BlockMain()
+	fsm.Test()
 }
