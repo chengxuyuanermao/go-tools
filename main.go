@@ -1,7 +1,7 @@
 package main
 
-import "github.com/chengxuyuanermao/goTools/zapLog"
+import "github.com/chengxuyuanermao/goTools/gorm"
 
 func main() {
-	zapLog.Use()
+	gorm.UseMysql()
 }

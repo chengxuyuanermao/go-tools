@@ -1,6 +1,7 @@
 package zapLog
 
 import (
+	"fmt"
 	"gopkg.in/natefinch/lumberjack.v2"
 	"net/http"
 	"time"
@@ -64,6 +65,10 @@ func getLogWriter(filepath, filename string) zapcore.WriteSyncer {
 }
 
 func simpleHttpGet(url string) {
+	a := "多读书"
+	sugarLogger.Debug("aa %v", "vv", "我哦", "dd")
+	sugarLogger.Errorf(fmt.Sprintf("未找到%v玩家", a))
+
 	sugarLogger.Debugf("Trying to hit GET request for %s", url)
 	resp, err := http.Get(url)
 	if err != nil {
