@@ -1,7 +1,9 @@
 package main
 
-import "github.com/chengxuyuanermao/goTools/xorm"
+import (
+	"github.com/chengxuyuanermao/goTools/goRedis"
+)
 
 func main() {
-	xorm.Main()
+	goRedis.Use()
 }
