@@ -1,7 +1,7 @@
 package main
 
-import "github.com/chengxuyuanermao/goTools/fsm"
+import "github.com/chengxuyuanermao/goTools/xorm"
 
 func main() {
-	fsm.Test()
+	xorm.Main()
 }
