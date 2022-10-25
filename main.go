@@ -1,9 +1,7 @@
 package main
 
-import (
-	"github.com/chengxuyuanermao/goTools/decimal"
-)
+import "github.com/chengxuyuanermao/goTools/decimal"
 
 func main() {
-	decimal.Use()
+	decimal.Main()
 }
