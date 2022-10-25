@@ -21,14 +21,14 @@ func create() {
 	// Set active sheet of the workbook.
 	xlsx.SetActiveSheet(index)
 	// Save xlsx file by the given path.
-	err := xlsx.SaveAs("./Book1.xlsx")
+	err := xlsx.SaveAs("./goXlsx/Book1.xlsx")
 	if err != nil {
 		fmt.Println(err)
 	}
 }
 
 func read() {
-	f, err := excelize.OpenFile("Book1.xlsx")
+	f, err := excelize.OpenFile("./goXlsx/Book1.xlsx")
 	if err != nil {
 		fmt.Println(err)
 		return

@@ -26,7 +26,7 @@ func Use() {
 }
 
 func InitLogger() {
-	writeSyncer := getLogWriter("./log/zapLog/", "zapLog")
+	writeSyncer := getLogWriter("./zapLog/log/zapLog/", "zapLog")
 	encoder := getEncoder()
 	core := zapcore.NewCore(encoder, writeSyncer, zapcore.DebugLevel) // debug级别的都将被写入
 
