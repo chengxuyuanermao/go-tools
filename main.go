@@ -1,7 +1,9 @@
 package main
 
-import "github.com/chengxuyuanermao/goTools/decimal"
+import (
+	test "github.com/chengxuyuanermao/goTools/0-test"
+)
 
 func main() {
-	decimal.Main()
+	test.UseDefer4()
 }

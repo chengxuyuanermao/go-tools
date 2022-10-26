@@ -27,7 +27,7 @@ func Main() {
 	fmt.Println("mul:", price.Mul(num)) // 乘法，price*quantity = 136.02 * 3 = 408.06
 	fmt.Println("div:", price.Div(num)) // 除
 
-	fmt.Println("3 div 2:", num.Div(decimal.NewFromFloat(1.3))) // 除
+	fmt.Println("3 div 1.3:", num.Div(decimal.NewFromFloat(1.3))) // 除不尽头
 
 	/**
 	add: 139.02
