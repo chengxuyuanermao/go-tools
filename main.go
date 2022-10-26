@@ -1,9 +1,7 @@
 package main
 
-import (
-	test "github.com/chengxuyuanermao/goTools/0-test"
-)
+import "github.com/chengxuyuanermao/goTools/time"
 
 func main() {
-	test.UseDefer4()
+	time.UseGoTime()
 }
