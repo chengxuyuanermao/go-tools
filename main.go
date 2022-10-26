@@ -1,7 +1,9 @@
 package main
 
-import "github.com/chengxuyuanermao/goTools/time"
+import (
+	"github.com/chengxuyuanermao/goTools/strconv"
+)
 
 func main() {
-	time.UseGoTime()
+	strconv.UseStrconv()
 }
