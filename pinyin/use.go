@@ -5,7 +5,7 @@ import (
 	"github.com/mozillazg/go-pinyin"
 )
 
-func use() {
+func Use() {
 	hans := "中国人"
 	a := pinyin.NewArgs() // a相当于参数配置
 
