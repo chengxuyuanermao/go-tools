@@ -37,36 +37,37 @@ func Main() {
 
 // 查询&统计
 func selectData() {
-	//selectGet()
+	selectGet()
 	//selectFind()
 	//selectIterate()
-	selectRows()
+	//selectRows()
 }
 
 func selectGet() {
-	user1 := &User{}
-	has, _ := engine.ID(1).Get(user1)
+	//user1 := &User{}
+	//has, _ := engine.ID(1).Get(user1)
+	//if has {
+	//	fmt.Printf("user1:%v\n", user1)
+	//}
+	//
+	//user2 := &User{}
+	//has, _ = engine.Where("name=?", "dj").Get(user2)
+	//if has {
+	//	fmt.Printf("user2:%v\n", user2)
+	//}
+
+	user3 := &User{Salt: "11"}
+	has, err := engine.Get(user3)
+	fmt.Println(err, has)
 	if has {
-		fmt.Printf("user1:%v\n", user1)
+		fmt.Printf("\n user3:%v\n", user3)
 	}
 
-	user2 := &User{}
-	has, _ = engine.Where("name=?", "dj").Get(user2)
-	if has {
-		fmt.Printf("user2:%v\n", user2)
-	}
-
-	user3 := &User{Id: 5}
-	has, _ = engine.Get(user3)
-	if has {
-		fmt.Printf("user3:%v\n", user3)
-	}
-
-	user4 := &User{Name: "pipi"}
-	has, _ = engine.Get(user4)
-	if has {
-		fmt.Printf("user4:%v\n", user4)
-	}
+	//user4 := &User{Name: "pipi"}
+	//has, _ = engine.Get(user4)
+	//if has {
+	//	fmt.Printf("user4:%v\n", user4)
+	//}
 }
 
 // Get()方法只能返回单条记录，其生成的 SQL 语句总是有LIMIT 1。Find()方法返回所有符合条件的记录。Find()需要传入对象切片的指针或 map 的指针：
