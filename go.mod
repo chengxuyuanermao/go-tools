@@ -13,6 +13,7 @@ require (
 	github.com/hashicorp/go-version v1.6.0
 	github.com/mozillazg/go-pinyin v0.19.0
 	github.com/name5566/leaf v0.0.0-20200516012428-8592b1abbbbe
+	github.com/nguyenthenguyen/docx v0.0.0-20220721043308-1903da0ef37d
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/pkg/errors v0.8.1
 	github.com/pkg/profile v1.7.0

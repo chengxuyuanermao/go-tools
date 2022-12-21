@@ -1,7 +1,7 @@
 package main
 
-import "github.com/chengxuyuanermao/goTools/errors"
+import "github.com/chengxuyuanermao/goTools/docx"
 
 func main() {
-	errors.Use()
+	docx.Use()
 }
