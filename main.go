@@ -1,5 +1,7 @@
 package main
 
-func main() {
+import "github.com/chengxuyuanermao/goTools/errors"
 
+func main() {
+	errors.Use()
 }
