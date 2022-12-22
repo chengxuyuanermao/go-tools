@@ -18,6 +18,7 @@ import (
 	"os"
 	"strings"
 	"time"
+	"unicode/utf8"
 )
 
 // Use
@@ -26,12 +27,12 @@ titles := []string{"噪音扰民打110不处理怎么办", "新闻播报的技�
 cid从左到右，从0开始数的tab分类；i=0代表第一页
 cid= 0学前教育；6互联网；7行业资料；10实用模版
 done文件夹命名：
-	done/日期-种类/title.docx
+	done/日期-种类/1/title.docx
 */
 func Use() {
 	cid := 0
 	perNum := 20
-	for i := 0; i <= 5; i++ { // 页数偏移
+	for i := 0; i < 5; i++ { // 页数偏移
 		titles := getTitles(cid, i, perNum)
 		//titles := []string{"噪音扰民打110不处理怎么办"}
 		for k, title := range titles {
@@ -42,7 +43,7 @@ func Use() {
 			if err != nil {
 				panic(err)
 			}
-			dir := fmt.Sprintf("./docx/done/%v-%v/", time.Now().Format("20060102"), cid)
+			dir := fmt.Sprintf("./docx/done/%v-%v/%v", time.Now().Format("20060102"), cid, i+1)
 			// 判断文件夹是否存在，不存在要创建
 			if !pathExists(dir) {
 				err = os.MkdirAll(dir, os.ModePerm)
@@ -135,7 +136,7 @@ func getTitles(cid int, page int, perNum int) []string {
 	var res []string
 	titleInfo := titleResp.Data.QueryList
 	for _, v := range titleInfo {
-		if v.Status == 1 {
+		if v.Status == 1 && utf8.RuneCountInString(v.QueryName) >= 5 {
 			res = append(res, v.QueryName)
 		}
 	}

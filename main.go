@@ -1,9 +1,13 @@
 package main
 
 import (
-	"github.com/chengxuyuanermao/goTools/docx"
+	"fmt"
+	"unicode/utf8"
 )
 
 func main() {
-	docx.Use()
+	//docx.Use()
+	ca := "ss上我《."
+	res := utf8.RuneCountInString(ca)
+	fmt.Println(res)
 }
