@@ -30,7 +30,7 @@ done文件夹命名：
 	done/日期-种类/1/title.docx
 */
 func Use() {
-	cid := 0
+	cid := 10
 	perNum := 20
 	for i := 0; i < 5; i++ { // 页数偏移
 		titles := getTitles(cid, i, perNum)
@@ -43,7 +43,7 @@ func Use() {
 			if err != nil {
 				panic(err)
 			}
-			dir := fmt.Sprintf("./docx/done/%v-%v/%v", time.Now().Format("20060102"), cid, i+1)
+			dir := fmt.Sprintf("./docx/done/%v-%v/%v/", time.Now().Format("20060102"), cid, i+1)
 			// 判断文件夹是否存在，不存在要创建
 			if !pathExists(dir) {
 				err = os.MkdirAll(dir, os.ModePerm)
@@ -137,7 +137,7 @@ func getTitles(cid int, page int, perNum int) []string {
 	titleInfo := titleResp.Data.QueryList
 	for _, v := range titleInfo {
 		if v.Status == 1 && utf8.RuneCountInString(v.QueryName) >= 5 {
-			res = append(res, v.QueryName)
+			res = append(res, strings.TrimSpace(v.QueryName))
 		}
 	}
 	return res
