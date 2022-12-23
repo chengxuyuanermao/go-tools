@@ -1,8 +1,8 @@
 package main
 
-import "github.com/chengxuyuanermao/goTools/internalOs"
+import "github.com/chengxuyuanermao/goTools/internalFilePath"
 
 func main() {
-	internalOs.Use()
 	//docx.Use()
+	internalFilePath.Use()
 }
