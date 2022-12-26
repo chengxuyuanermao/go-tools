@@ -38,13 +38,13 @@ func LoadConfig() *Configuration {
 		}
 		defer f.Close()
 		encoder := json.NewDecoder(f)
-		err = encoder.Decode(config)
+		err = encoder.Decode(config) // 将 config.json 中的文件序列化到config结构体中
 		if err != nil {
 			log.Fatalf("decode config err: %v", err)
 			return
 		}
 
-		// 如果环境变量有配置，读取环境变量
+		// 如果环境变量有配置，优先读取环境变量
 		ApiKey := os.Getenv("ApiKey")
 		AutoPass := os.Getenv("AutoPass")
 		SessionTimeout := os.Getenv("SessionTimeout")

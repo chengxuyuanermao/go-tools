@@ -10,6 +10,8 @@ require (
 	github.com/go-redis/redis v6.15.9+incompatible
 	github.com/go-resty/resty/v2 v2.7.0
 	github.com/go-sql-driver/mysql v1.6.0
+	github.com/gorilla/mux v1.7.3
+	github.com/gorilla/websocket v0.0.0-20170926233335-4201258b820c
 	github.com/hashicorp/go-version v1.6.0
 	github.com/mozillazg/go-pinyin v0.19.0
 	github.com/name5566/leaf v0.0.0-20200516012428-8592b1abbbbe

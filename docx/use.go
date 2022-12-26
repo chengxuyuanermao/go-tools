@@ -32,7 +32,7 @@ done文件夹命名：
 func Use() {
 	cid := 7
 	perNum := 20
-	for i := 6; i < 7; i++ { // 页数偏移
+	for i := 0; i < 10; i++ { // 页数偏移
 		titles := getTitles(cid, i, perNum)
 		//titles := []string{"噪音扰民打110不处理怎么办"}
 		for k, title := range titles {

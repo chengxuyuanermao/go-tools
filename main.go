@@ -1,8 +1,8 @@
 package main
 
-import "github.com/chengxuyuanermao/goTools/internalFilePath"
+import "github.com/chengxuyuanermao/goTools/socket/ws"
 
 func main() {
 	//docx.Use()
-	internalFilePath.Use()
+	ws.Use()
 }
