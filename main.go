@@ -1,8 +1,8 @@
 package main
 
-import "github.com/chengxuyuanermao/goTools/socket/ws"
+import "github.com/chengxuyuanermao/goTools/carbon"
 
 func main() {
 	//docx.Use()
-	ws.Use()
+	carbon.Use()
 }

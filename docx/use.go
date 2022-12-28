@@ -30,7 +30,7 @@ done文件夹命名：
 	done/日期-种类/1/title.docx
 */
 func Use() {
-	cid := 7
+	cid := 10
 	perNum := 20
 	for i := 0; i < 10; i++ { // 页数偏移
 		titles := getTitles(cid, i, perNum)
