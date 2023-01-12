@@ -2,21 +2,17 @@ package main
 
 import (
 	"fmt"
-	"github.com/chengxuyuanermao/goTools/docx"
 	"strings"
 )
 
 func main() {
-	docx.Use()
-	//xx()
+	//docx.Use()
+	//redBookSpider.Use()
+	xx()
 }
 
 func xx() {
-	filterWord := []rune{'/', '《', '》', ':', '*', '<', '>', '|', '?', '.', '“', '‘'}
-	title := "/dd>"
-	for _, w := range filterWord {
-		fmt.Println("---", string(w))
-		fmt.Println(strings.ContainsRune(title, w))
-	}
+	res := strings.Contains("中国  广东  广州", "广州")
+	fmt.Println(res)
 
 }
