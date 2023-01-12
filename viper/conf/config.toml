@@ -1,0 +1,181 @@
+[core]
+# enable debug mode
+debug = false
+walletname = "main"  #测试服:test,正式服:main
+anm = "vgame"
+subanm = "ludocheer"
+#secret_key = "8hlgfl8ztrymiisb"
+
+# log相关配置
+[log]
+ log_env = "test"     # dev 不输出log文件，在控制台打印日志，test，pro 会在当前目录创建log并输出log
+ log_level = "debug" # 日志级别
+ log_path = "./log"  # 日志输出路径
+ log_days = 15       # 日志保留的天数
+
+# 游戏相关gate配置
+[gate]
+ max_conn_num = 20000
+ pending_write_num = 20000
+ max_msg_len = 20480
+ ws_addr = ":3662"
+ http_timeout = 10 # 单位s
+ cert_file = ""
+ key_file = ""
+ tcp_addr = ""
+ len_msg_len = 2
+ little_endian = false
+ heartbeat =30# 单位s
+
+# Redis server config
+[redis]
+host = "127.0.0.1"
+# host = "192.168.20.199"
+port = 6379
+dialread_timeout = 5
+dialwrite_timeout = 5
+dialconnect_timeout = 5
+max_active = 100
+max_idle = 50
+idle_timeout = 60
+
+# Memcache server config
+[memcache]
+#host = "127.0.0.1"
+# host = "192.168.20.199"
+host = "47.74.180.115"
+# host = "127.0.0.1"
+port = 9995
+timeout = 5
+
+# Mysql server config
+[database]
+#host = "127.0.0.1"
+host = "161.117.2.188"
+port = 3307
+dbname = "game_teenpatticheer"
+password = "S4MZ6iUqkvx5O1ahfZ7C"
+username = "nemo_starhalo_be"
+args = "charset=utf8"
+buf_size = 10
+max_idle_conns = 20
+max_open_conns = 15
+show_sql = false
+
+# rummy时间控制
+[rummy_time]
+#牌局状态时间(1：等待开局,2:准备开局，3:定庄，4:发牌，5:打牌，6:成牌，7:结算，8:等待继续游戏，9:彩金)
+table_state_ready_time = 3
+table_state_dealer_time = 2
+table_state_dealing_time = 5
+table_state_play_time = 30
+table_state_finish_time  = 30
+table_state_result_time = 10
+table_state_bonus_time = 10
+standbytime = 30  # 30秒备用时间
+option_interval_time = 1  # 操作间隔时间
+# restart_interval_time = 10  # 重新报名时间
+close_interval_time = 10  # 关闭牌桌时间
+
+# tp时间控制
+[tp_time]
+#牌局状态时间(1：等待开局,2:准备开局，3:发牌，4:打牌，5:结算)
+table_state_ready_time = 5
+table_state_dealing_time = 3
+table_state_play_time = 20
+table_state_result_time = 5
+option_interval_time = 1  # 操作间隔时间
+
+# ab时间控制
+[ab_time]
+#牌局状态时间(1：等待开局,2:准备开局，3:押注，4:发牌，5:结算)
+table_state_ready_time = 10
+table_state_bet_time = 30
+table_state_dealing_time = 10
+table_state_result_time = 10
+option_interval_time = 1  # 操作间隔时间
+
+#活动配置
+[activity]
+#活动福利商品id
+activity_goods_id = 14
+#救济金商品id
+benefit_goods_id = 15
+
+[ban_region]
+country = ["US"]
+state = ["Karnataka"]
+city = ["Bengaluru"]
+
+[ludo_time]
+table_state_waiting_time = 10
+table_state_ready_time = 5
+table_state_play_time = 20
+table_state_result_time = 10
+
+option_interval_time = 1
+close_interval_time = 10
+auto_start_time = 10
+controller_point = false
+
+[hundred_control_v2]
+ab_rate=100
+ab_weight=[5,5,5,5,20]
+ab_1=[6,15]
+ab_2=[6,15]
+ab_3=[6,12]
+ab_4=[6,12]
+ab_5=[3,8]
+dice_rate=100
+dice_weight=[5,5,5,5,20]
+dice_1=[6,15]
+dice_2=[6,15]
+dice_3=[6,12]
+dice_4=[6,12]
+dice_5=[3,8]
+dragon_rate=100
+dragon_weight=[5,5,5,5,20]
+dragon_1=[6,15]
+dragon_2=[6,15]
+dragon_3=[6,12]
+dragon_4=[6,12]
+dragon_5=[3,8]
+pattibet_rate=100
+pattibet_weight=[5,5,5,5,20]
+pattibet_1=[6,15]
+pattibet_2=[6,15]
+pattibet_3=[6,12]
+pattibet_4=[6,12]
+pattibet_5=[3,8]
+
+#各百人游戏强杀局概率
+[hundred_control_new]
+dragon_rate=5
+ab_rate=5
+dice_rate=5
+munda_rate=5
+pattibet_rate=5
+
+#各百人游戏模拟次数
+[hundred_control_count]
+dragon_count=10
+ab_count=10
+dice_count=10
+munda_count=10
+pattibet_count=10
+
+#各百人游戏分享包名配置
+[hundred_control_room]
+dragon_share_room=["com.ludocheer.sharegame","com.ludocheer.offshare", "com.ludohumsafar.game", "com.luocheer.ms"]
+ab_share_room=["com.ludocheer.sharegame","com.ludocheer.offshare", "com.ludohumsafar.game", "com.luocheer.ms"]
+dice_share_room=["com.ludocheer.sharegame","com.ludocheer.offshare", "com.ludohumsafar.game", "com.luocheer.ms"]
+munda_share_room=["com.ludocheer.sharegame","com.ludocheer.offshare", "com.ludohumsafar.game", "com.luocheer.ms"]
+pattibet_share_room=["com.ludocheer.sharegame","com.ludocheer.offshare", "com.ludohumsafar.game", "com.luocheer.ms"]
+
+#各百人游戏分享包房间杀率
+[hundred_control_new_share]
+dragon_share_rate=15
+ab_share_rate=15
+dice_share_rate=15
+munda_share_rate=15
+pattibet_share_rate=15
