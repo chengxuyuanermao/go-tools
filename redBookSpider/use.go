@@ -36,30 +36,40 @@ func Use() {
 	for k, item := range resInfo.Data.Items {
 		fmt.Println()
 		fmt.Printf("------------ start: %v ------------\n", k+1)
+		fmt.Println("checking displayTitle-----: ", item.NoteCard.DisplayTitle)
+
 		homepageUrl := fmt.Sprintf("https://www.xiaohongshu.com/user/profile/%v", item.NoteCard.User.UserID)
 		detailUrl := fmt.Sprintf("https://www.xiaohongshu.com/explore/%v", item.ID)
 		detailUrl2 := fmt.Sprintf("https://www.xiaohongshu.com/discovery/item/%v", item.ID)
-		lock, city := isSuit(homepageUrl, detailUrl)
-		if !lock {
-			continue
-		}
-
-		fmt.Println("displayTitle-----: ", item.NoteCard.DisplayTitle)
+		// 验证关键词是否命中
+		isHitKeyWords := false
 		for _, v := range keyWords {
 			isContainKeyWord := strings.Contains(item.NoteCard.DisplayTitle, v)
 			if !isContainKeyWord {
 				continue
 			}
-			temp := &TargetInfo{
-				DisplayTitle: item.NoteCard.DisplayTitle,
-				DetailUrl:    detailUrl,
-				DetailUrl2:   detailUrl2,
-				HomepageUrl:  homepageUrl,
-				City:         city,
-			}
-			targetInfos = append(targetInfos, temp)
+			isHitKeyWords = true
 			break
 		}
+		if !isHitKeyWords {
+			continue
+		}
+
+		// 城市&性别是否命中
+		fmt.Println("checking city&gender ---- ")
+		lock, city := isSuit(homepageUrl, detailUrl)
+		if !lock {
+			continue
+		}
+		// 通过
+		temp := &TargetInfo{
+			DisplayTitle: item.NoteCard.DisplayTitle,
+			DetailUrl:    detailUrl,
+			DetailUrl2:   detailUrl2,
+			HomepageUrl:  homepageUrl,
+			City:         city,
+		}
+		targetInfos = append(targetInfos, temp)
 	}
 	fmt.Println("res-- : ", len(targetInfos))
 	if len(targetInfos) > 0 {
@@ -92,7 +102,7 @@ func exportCsv(targetInfos []*TargetInfo) {
 }
 
 func getKeyWords() []string {
-	keyWords := []string{"介绍", "父母", "妈", "crush", "男硕士", "嫁", "拍拖", "喜欢", "养鱼", "媒", "回家", "脱单", "相亲", "单身", "对象", "催婚", "95", "97", "98", "99", "96", "合适的人", "男朋友", "喜欢的人", "恋爱", "回家"}
+	keyWords := []string{"脱个单", "介绍", "父母", "妈", "crush", "男硕士", "嫁", "拍拖", "喜欢", "养鱼", "媒", "回家", "脱单", "相亲", "单身", "对象", "催婚", "95", "97", "98", "99", "96", "合适的人", "男朋友", "喜欢的人", "恋爱", "回家"}
 	return keyWords
 }
 
