@@ -131,6 +131,7 @@ func redBookSpider() []byte {
 	if resp.StatusCode == 200 {
 		fmt.Println("ok")
 	} else {
+		fmt.Println(resp.StatusCode)
 		panic("not 200")
 	}
 	return res

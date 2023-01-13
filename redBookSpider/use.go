@@ -18,6 +18,7 @@ const GenderBoy = 0
 type TargetInfo struct {
 	DisplayTitle string `json:"display_title"`
 	DetailUrl    string `json:"detail_url"`
+	DetailUrl2   string `json:"detail_url2"`
 	HomepageUrl  string `json:"homepage_url"`
 	City         string `json:"city"`
 }
@@ -29,6 +30,7 @@ func Use() {
 	if err != nil {
 		panic("res not right")
 	}
+	fmt.Printf("spider get info: %v \n", len(resInfo.Data.Items))
 	var targetInfos []*TargetInfo
 	keyWords := getKeyWords()
 	for k, item := range resInfo.Data.Items {
@@ -36,6 +38,7 @@ func Use() {
 		fmt.Printf("------------ start: %v ------------\n", k+1)
 		homepageUrl := fmt.Sprintf("https://www.xiaohongshu.com/user/profile/%v", item.NoteCard.User.UserID)
 		detailUrl := fmt.Sprintf("https://www.xiaohongshu.com/explore/%v", item.ID)
+		detailUrl2 := fmt.Sprintf("https://www.xiaohongshu.com/discovery/item/%v", item.ID)
 		lock, city := isSuit(homepageUrl, detailUrl)
 		if !lock {
 			continue
@@ -50,6 +53,7 @@ func Use() {
 			temp := &TargetInfo{
 				DisplayTitle: item.NoteCard.DisplayTitle,
 				DetailUrl:    detailUrl,
+				DetailUrl2:   detailUrl2,
 				HomepageUrl:  homepageUrl,
 				City:         city,
 			}
@@ -78,9 +82,9 @@ func exportCsv(targetInfos []*TargetInfo) {
 	// 写入UTF-8 BOM，防止中文乱码
 	file.WriteString("\xEF\xBB\xBF")
 	w := csv.NewWriter(file)
-	w.Write([]string{"标题", "帖子详情", "主页", "城市"}) //Write 进行换行
+	w.Write([]string{"标题", "帖子详情", "帖子详情2", "主页", "城市"}) //Write 进行换行
 	for _, v := range targetInfos {
-		temp := []string{v.DisplayTitle, v.DetailUrl, v.HomepageUrl, v.City}
+		temp := []string{v.DisplayTitle, v.DetailUrl, v.DetailUrl2, v.HomepageUrl, v.City}
 		w.Write(temp)
 		// 刷新缓冲
 		w.Flush()
