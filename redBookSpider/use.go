@@ -30,10 +30,10 @@ func Use() {
 		panic("res not right")
 	}
 	var targetInfos []*TargetInfo
-	keyWords := []string{"脱单", "相亲", "单身", "对象", "催婚", "95后", "97", "98", "99", "96", "合适的人", "男朋友", "喜欢的人", "谈恋爱", "回家"}
-	for _, item := range resInfo.Data.Items {
+	keyWords := getKeyWords()
+	for k, item := range resInfo.Data.Items {
 		fmt.Println()
-		fmt.Println("------------ start ------------")
+		fmt.Printf("------------ start: %v ------------\n", k+1)
 		homepageUrl := fmt.Sprintf("https://www.xiaohongshu.com/user/profile/%v", item.NoteCard.User.UserID)
 		detailUrl := fmt.Sprintf("https://www.xiaohongshu.com/explore/%v", item.ID)
 		lock, city := isSuit(homepageUrl, detailUrl)
@@ -58,7 +58,11 @@ func Use() {
 		}
 	}
 	fmt.Println("res-- : ", len(targetInfos))
-	exportCsv(targetInfos)
+	if len(targetInfos) > 0 {
+		exportCsv(targetInfos)
+		fmt.Println("export content success!")
+		getComment(targetInfos)
+	}
 }
 
 func exportCsv(targetInfos []*TargetInfo) {
@@ -83,8 +87,13 @@ func exportCsv(targetInfos []*TargetInfo) {
 	}
 }
 
+func getKeyWords() []string {
+	keyWords := []string{"介绍", "父母", "妈", "crush", "男硕士", "嫁", "拍拖", "喜欢", "养鱼", "媒", "回家", "脱单", "相亲", "单身", "对象", "催婚", "95", "97", "98", "99", "96", "合适的人", "男朋友", "喜欢的人", "恋爱", "回家"}
+	return keyWords
+}
+
 func isSuit(url string, detailUrl string) (bool, string) {
-	sec := time.Duration(rand.Intn(10))
+	sec := time.Duration(rand.Intn(8) + 5)
 	fmt.Println("sleep sec----", sec)
 	time.Sleep(sec * time.Second)
 
