@@ -1,13 +1,9 @@
 package main
 
-import (
-	"fmt"
-	"github.com/chengxuyuanermao/goTools/redBookSpider"
-	"strconv"
-	"time"
-)
+import "github.com/chengxuyuanermao/goTools/goth"
 
 func main() {
-	redBookSpider.Use()
-	fmt.Println(strconv.Itoa(int(time.Now().UnixMilli())))
+	//docx.Use()
+	//redBookSpider.Use()
+	goth.Use()
 }

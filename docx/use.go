@@ -32,9 +32,9 @@ done文件夹命名：
 func Use() {
 	cid := 6
 	perNum := 20
-	for i := 0; i < 11; i++ { // 页数偏移
-		titles := getTitles(cid, i, perNum)
-		//titles := []string{"噪音扰民打110不处理怎么办"}
+	for i := 0; i < 1; i++ { // 页数偏移
+		//titles := getTitles(cid, i, perNum)
+		titles := []string{"朦朦胧胧反义词"}
 		for k, title := range titles {
 			fmt.Printf("第%v篇开始---\n", k+1+i*perNum)
 			content := getContent(title)
