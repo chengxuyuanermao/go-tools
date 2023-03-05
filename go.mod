@@ -5,6 +5,7 @@ go 1.17
 require (
 	github.com/davecgh/go-spew v1.1.1
 	github.com/fsnotify/fsnotify v1.6.0
+	github.com/go-playground/assert/v2 v2.0.1
 	github.com/go-playground/locales v0.14.0
 	github.com/go-playground/universal-translator v0.18.0
 	github.com/go-playground/validator/v10 v10.11.1
@@ -16,6 +17,7 @@ require (
 	github.com/gorilla/websocket v0.0.0-20170926233335-4201258b820c
 	github.com/hashicorp/go-version v1.6.0
 	github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible
+	github.com/markbates/goth v1.76.0
 	github.com/mozillazg/go-pinyin v0.19.0
 	github.com/name5566/leaf v0.0.0-20200516012428-8592b1abbbbe
 	github.com/nguyenthenguyen/docx v0.0.0-20220721043308-1903da0ef37d
@@ -62,7 +64,6 @@ require (
 	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/lestrrat-go/strftime v1.0.6 // indirect
 	github.com/magiconair/properties v1.8.6 // indirect
-	github.com/markbates/goth v1.76.0 // indirect
 	github.com/mattn/go-sqlite3 v1.14.15 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect

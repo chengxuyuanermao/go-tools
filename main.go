@@ -1,9 +1,19 @@
 package main
 
-import "github.com/chengxuyuanermao/goTools/goth"
+import (
+	"fmt"
+	"github.com/chengxuyuanermao/goTools/time"
+)
 
 func main() {
-	//docx.Use()
-	//redBookSpider.Use()
-	goth.Use()
+	//xx()
+	time.TestLeafTimer()
+}
+
+var xx = func() {
+	ss()
+}
+
+func ss() {
+	fmt.Println("ooo")
 }

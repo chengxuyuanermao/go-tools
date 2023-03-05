@@ -1,7 +1,5 @@
-package yyy
-
-import "fmt"
+package xxx
 
 func Test() {
-	fmt.Println("sss---")
+
 }
