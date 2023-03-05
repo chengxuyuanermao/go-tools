@@ -1,19 +1,7 @@
 package main
 
-import (
-	"fmt"
-	"github.com/chengxuyuanermao/goTools/time"
-)
+import "github.com/chengxuyuanermao/goTools/redBookSpider"
 
 func main() {
-	//xx()
-	time.TestLeafTimer()
-}
-
-var xx = func() {
-	ss()
-}
-
-func ss() {
-	fmt.Println("ooo")
+	redBookSpider.StartSpider()
 }
