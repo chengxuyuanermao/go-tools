@@ -56,11 +56,13 @@ type table struct {
 func (t *table) waiting() {
 	fmt.Println("wating---")
 	t.fsm.Event(TABLE_STATE_READY)
+	fmt.Println("waiting---ending")
 }
 
 func (t *table) ready() {
 	fmt.Println("ready---")
-	t.fsm.Event(TABLE_STATE_PLAY)
+	c <- true
+	//t.fsm.Event(TABLE_STATE_PLAY)
 }
 
 func (t *table) play() {

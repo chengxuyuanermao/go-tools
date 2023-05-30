@@ -1,7 +1,7 @@
 package main
 
-import "github.com/chengxuyuanermao/goTools/redBookSpider"
+import "github.com/chengxuyuanermao/goTools/studyReflect"
 
 func main() {
-	redBookSpider.StartSpider()
+	studyReflect.Use()
 }

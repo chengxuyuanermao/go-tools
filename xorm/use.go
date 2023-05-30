@@ -37,8 +37,8 @@ func Main() {
 
 // 查询&统计
 func selectData() {
-	selectGet()
-	//selectFind()
+	//selectGet()
+	selectFind()
 	//selectIterate()
 	//selectRows()
 }
@@ -56,12 +56,12 @@ func selectGet() {
 	//	fmt.Printf("user2:%v\n", user2)
 	//}
 
-	user3 := &User{Salt: "11"}
-	has, err := engine.Get(user3)
-	fmt.Println(err, has)
-	if has {
-		fmt.Printf("\n user3:%v\n", user3)
-	}
+	//user3 := &User{Name: "ldj"}
+	//has, err := engine.Get(&user3)
+	//fmt.Println(err, has)
+	//if has {
+	//	fmt.Printf("\n user3:%v\n", user3)
+	//}
 
 	//user4 := &User{Name: "pipi"}
 	//has, _ = engine.Get(user4)
@@ -72,14 +72,14 @@ func selectGet() {
 
 // Get()方法只能返回单条记录，其生成的 SQL 语句总是有LIMIT 1。Find()方法返回所有符合条件的记录。Find()需要传入对象切片的指针或 map 的指针：
 func selectFind() {
-	slcUsers := make([]User, 0)
-	engine.Where("age > ? and age < ?", 12, 30).Find(&slcUsers)
+	slcUsers := make([]*User, 0)
+	engine.Where("age > ? and age < ?", 12, 30).Find(slcUsers)
 	fmt.Println("users whose age between [12,30]:", slcUsers)
 
 	// map的键为主键，所以如果表为复合主键就不能使用这种方式了。
-	mapUsers := make(map[int64]User)
-	engine.Where("length(name) = ?", 3).Find(&mapUsers)
-	fmt.Println("users whose has name of length 3:", mapUsers)
+	//mapUsers := make(map[int64]User)
+	//engine.Where("length(name) = ?", 3).Find(&mapUsers)
+	//fmt.Println("users whose has name of length 3:", mapUsers)
 }
 
 func selectIterate() {

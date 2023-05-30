@@ -62,30 +62,26 @@ func ExampleTimer() {
 	d := timer.NewDispatcher(10) // 实例化一个新的调度器
 
 	// timer 1
-	d.AfterFunc(1, func() {
-		fmt.Println("My name is Leaf")
-	})
+	//d.AfterFunc(1, func() {
+	//	fmt.Println("My name is Leaf")
+	//})
 
-	//timer 2
-	_ = d.AfterFunc(1, func() {
-		fmt.Println("will not print")
-	})
-	// dispatch
-	for v := range d.ChanTimer {
-		v.Cb()
-	}
-
-	// timer 3
-	//t := d.AfterFunc(1, func() { // t相当于延迟执行的标识
+	////timer 2
+	//_ = d.AfterFunc(1, func() {
 	//	fmt.Println("will not print")
 	//})
-	//t.Stop() // 利用标识终止其执行
+	//// dispatch
+	//for v := range d.ChanTimer {
+	//	v.Cb()
+	//}
+
+	// timer 3
+	t := d.AfterFunc(1, func() { // t相当于延迟执行的标识
+		fmt.Println("will not print")
+	})
+	t.Stop() // 利用标识终止其执行
 	//(<-d.ChanTimer).Cb()
 
 	// Output:
 	// My name is Leaf
-}
-
-func Aa() {
-	xx()
 }
