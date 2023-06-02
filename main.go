@@ -1,10 +1,6 @@
 package main
 
-import (
-	"github.com/chengxuyuanermao/goTools/studyReflect"
-)
-
 func main() {
-	studyReflect.Use9()
-
+	//analyzeCsv()
+	test22()
 }
