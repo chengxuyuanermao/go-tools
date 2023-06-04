@@ -1,6 +1,6 @@
 package main
 
 func main() {
-	//analyzeCsv()
-	test22()
+	analyzeCsv()
+
 }
