@@ -1,4 +1,4 @@
-package main
+package projectEncrypt
 
 import (
 	"crypto/aes"
@@ -10,13 +10,12 @@ var (
 	libKey = "xidfkx902dfaxd34" // 客户端约定密钥"
 )
 
-func test() {
+func Test() {
 
-	encrypted := `yLJX1S1dM0jHVaQIjciWuL//iMph2eSIFk35ZJ1RCkuglFvOwUje8+rtbpXE6pgxuLvaMCPPW1E2vVQyIDhALvA+RwHCcuUdRdLUv9ZZC/cMWLgPnh6PVH5voY0GgCVJe9cArCN+E6g2YKnzVS3OChWW+oesM/vOjPva5LZ3XuLr8W/04ZlTmyVNqP9P3c/96Xc05Ud+msEQ9/2L54QPbqbimT7UR+eFSZNvcagvJj2Y2m6TZtMzbE5HMfkruvRv+PJKzGKRPDRXiDkpqTm4U+B8o0Kn3LbDTAKVnvy1W+Q9d2hrvawKu+HzLv4n+qA2nkb4pasUzRu3ykvH32AxYw==`
-	//data := "333"
-	//e := AesEncryptECB([]byte(data), []byte(libKey))
-	//encrypted := base64.StdEncoding.EncodeToString(e)
-	//fmt.Println(encrypted)
+	data := "333"
+	e := AesEncryptECB([]byte(data), []byte(libKey))
+	encrypted := base64.StdEncoding.EncodeToString(e)
+	fmt.Println(encrypted)
 
 	d, err := base64.StdEncoding.DecodeString(encrypted)
 	fmt.Println(err)
@@ -24,6 +23,7 @@ func test() {
 	fmt.Println(string(decrypted))
 }
 
+// todo
 func generateToken() {
 
 }

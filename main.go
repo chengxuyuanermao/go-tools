@@ -1,6 +1,7 @@
 package main
 
+import "github.com/chengxuyuanermao/goTools/projectCsv"
+
 func main() {
-	//analyzeCsv()
-	test22()
+	projectCsv.AnalyzeCsv()
 }

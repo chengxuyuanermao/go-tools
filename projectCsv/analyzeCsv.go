@@ -1,4 +1,4 @@
-package main
+package projectCsv
 
 import (
 	"encoding/csv"
@@ -9,9 +9,10 @@ import (
 	"time"
 )
 
-func analyzeCsv() {
+func AnalyzeCsv() {
+	fmt.Println(os.Getwd())
 	// 打开原始 CSV 文件
-	file, err := os.Open("./act_config.csv")
+	file, err := os.Open("./projectCsv/act_config.csv")
 	if err != nil {
 		panic(err)
 	}
@@ -47,7 +48,7 @@ func analyzeCsv() {
 	}
 
 	// 创建一个 CSV Writer，用于写入修改后的数据
-	outputFile, err := os.Create("output.csv")
+	outputFile, err := os.Create("./projectCsv/output.csv")
 	if err != nil {
 		panic(err)
 	}
