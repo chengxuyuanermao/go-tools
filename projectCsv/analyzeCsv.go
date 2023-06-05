@@ -68,13 +68,16 @@ func AnalyzeCsv() {
 }
 
 func transTime(str string) int {
-	layout := "2006.01.02" // 定义日期格式
-	//str := "2022.05.31"    // 待转换的日期字符串
-	t, err := time.Parse(layout, str)
+	loc, err := time.LoadLocation("Asia/Shanghai")
 	if err != nil {
 		fmt.Println(err)
 		return 0
 	}
-	timestamp := t.Unix() // 将时间转换成时间戳
-	return int(timestamp)
+	t, err := time.ParseInLocation("2006.01.02", str, loc)
+	if err != nil {
+		fmt.Println(err)
+		return 0
+	}
+	zeroTime := time.Date(t.Year(), t.Month(), t.Day(), 0, 0, 0, 0, loc)
+	return int(zeroTime.Unix())
 }
