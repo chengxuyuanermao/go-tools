@@ -1,4 +1,4 @@
-package main
+package internalReflect
 
 import (
 	"fmt"
@@ -6,7 +6,8 @@ import (
 	"strings"
 )
 
-func main() {
+// Test 参考：https://mp.weixin.qq.com/s?__biz=MzUzNTY5MzU2MA==&mid=2247490308&idx=1&sn=368533ff3d450c8003a7e81d42cd0bc5&scene=21#wechat_redirect
+func Test() {
 	a := A{
 		Name: "hhhh",
 		Age:  10,
