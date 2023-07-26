@@ -1,10 +1,10 @@
-package main
+package projectCsv
 
 import "fmt"
 
-func main() {
+func generate() {
 	var a, b, c int64
-	a = 1690732800
+	a = 1690473600
 	j := 22
 	for i := 1; i <= 30; i++ {
 		if i == 1 {
