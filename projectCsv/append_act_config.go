@@ -2,11 +2,11 @@ package projectCsv
 
 import "fmt"
 
-func generate() {
+func Generate() {
 	var a, b, c int64
-	a = 1690473600
-	j := 22
-	for i := 1; i <= 30; i++ {
+	a = 1698508800
+	j := 52
+	for i := 1; i <= 1000; i++ {
 		if i == 1 {
 			fmt.Printf("%s,%s,%s,%s,%s,%s,%s,%s\n", "id", "start_time", "end_time", "draw_time", "status", "total_reward", "ticket_number_reward", "is_reward")
 		}

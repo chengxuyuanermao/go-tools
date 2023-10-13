@@ -27,6 +27,7 @@ require (
 	github.com/robfig/cron/v3 v3.0.1
 	github.com/shirou/gopsutil v3.21.11+incompatible
 	github.com/shopspring/decimal v1.3.1
+	github.com/sirupsen/logrus v1.4.2
 	github.com/spf13/viper v1.14.0
 	github.com/uniplaces/carbon v0.2.2
 	github.com/urfave/cli v1.22.10
@@ -61,6 +62,7 @@ require (
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/kennygrant/sanitize v1.2.4 // indirect
+	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/lestrrat-go/strftime v1.0.6 // indirect
 	github.com/magiconair/properties v1.8.6 // indirect
