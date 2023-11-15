@@ -1,7 +1,7 @@
 package main
 
-import "github.com/chengxuyuanermao/goTools/logrus"
+import "github.com/chengxuyuanermao/goTools/pprof"
 
 func main() {
-	logrus.Use2()
+	pprof.TestHttp()
 }

@@ -8,3 +8,5 @@ log
 xxx
 *.csv
 *.log
+*.profile
+*.pprof
