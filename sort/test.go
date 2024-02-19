@@ -20,7 +20,12 @@ func (s byS) Swap(i, j int) {
 }
 
 func (s byS) Less(i, j int) bool {
-	return s[i].s > s[j].s
+	return s[i].s > s[j].s // 这里为倒序排序;
+
+	/*
+		1 看做i元素大于j元素，i元素更大的在数组前面 （即降序）
+		2 元素分布顺序: f g h [i j] k l m
+	*/
 }
 
 func Test22() {
@@ -29,15 +34,16 @@ func Test22() {
 	temp1 := &a{s: "b"}
 	temp2 := &a{s: "c"}
 	d = append(d, temp, temp1, temp2)
-	fmt.Println("before sort:", d)
-	for _, v := range d {
-		fmt.Println(v.s)
-	}
-	sort.Sort(byS(d))
-	fmt.Println("after sort:", d)
+	fmt.Println("before sort:")
 	for _, v := range d {
 		fmt.Println(v.s)
 	}
 
-	fmt.Println(d[:1])
+	sort.Sort(byS(d))
+
+	fmt.Println("after sort:")
+	for _, v := range d {
+		fmt.Println(v.s)
+	}
+
 }

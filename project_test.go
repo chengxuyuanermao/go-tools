@@ -27,7 +27,7 @@ type WithdrawV3Request struct {
 	AccountName string `json:"account_name,omitempty"` // 收款⽤户姓名
 }
 
-func test() {
+func testProject() {
 	req := &WithdrawV3Request{
 		SendId:      1,
 		PriceType:   "cash",
