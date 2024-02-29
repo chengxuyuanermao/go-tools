@@ -1,9 +1,26 @@
 package main
 
-import "github.com/chengxuyuanermao/goTools/sort"
+import (
+	"fmt"
+	"reflect"
+)
+
+type c struct {
+	name string
+}
+
+type d struct {
+	name string
+}
 
 func main() {
-	sort.TestIntReverse()
-	sort.TestIntsReverseV2()
-	//sort.Test22()
+	var a, b, cc, dd interface{}
+	a = 1
+	b = "1"
+	fmt.Println(a == b, reflect.TypeOf(a), reflect.TypeOf(b))
+
+	cc = c{name: "ss"}
+	dd = c{name: "dd"}
+	fmt.Println(cc == dd)
+
 }

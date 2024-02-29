@@ -2,49 +2,22 @@ package main
 
 import (
 	"fmt"
-	"github.com/fsnotify/fsnotify"
 	"github.com/spf13/viper"
-	"github.com/urfave/cli"
-	"os"
 )
 
-// urfave/cli框架 && viper 的使用
 func main() {
-	app := cli.NewApp()
+	// 配置文件设置
+	viper.SetConfigName("config")        // 配置文件名称 (不带后缀)
+	viper.SetConfigType("toml")          // 如果配置文件的名称不是通过 SetConfigName 设置，则需要设置配置文件类型
+	viper.AddConfigPath("./viper/conf/") // 查找配置文件的路径
 
-	// base application info
-	app.Name = "tpcheer"
-	app.Author = "tpcheer"
-	app.Version = "0.0.1"
-	app.Copyright = "tpcheer team reserved"
-	app.Usage = "tpcheer server"
-
-	// flags
-	app.Flags = []cli.Flag{
-		cli.StringFlag{
-			Name:  "config, c",
-			Value: "./conf/config.toml",
-			Usage: "load configuration from `FILE`",
-		},
-		cli.BoolFlag{
-			Name:  "cpuprofile",
-			Usage: "enable cpu profile",
-		},
+	if err := viper.ReadInConfig(); err != nil {
+		fmt.Printf("错误: %s\n", err)
 	}
-	app.Action = serve
-	app.Run(os.Args)
-}
 
-func serve(c *cli.Context) error {
-	viper.SetConfigType("toml")
-	viper.SetConfigFile(c.String("config")) // 采用了 cli.StringFlag中name的默认value
-	viper.ReadInConfig()
-	viper.WatchConfig()
-	viper.OnConfigChange(func(in fsnotify.Event) {
-		fmt.Println("ddd---")
-	})
+	// 读取配置项
+	host := viper.GetString("server.host") // 读取 server.host 的值
+	port := viper.GetInt("server.port")    // 读取 server.port 的值
 
-	fmt.Println("aa-----")
-	fmt.Println(viper.GetString("core.subanm"))
-	return nil
+	fmt.Printf("服务器地址: %s, 端口: %d\n", host, port)
 }

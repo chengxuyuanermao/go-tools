@@ -1,4 +1,4 @@
-package interfaceRouter
+package internalRouter
 
 import (
 	"fmt"

@@ -1,4 +1,4 @@
-package sort
+package internalSort
 
 import (
 	"fmt"
@@ -34,14 +34,14 @@ func Test22() {
 	temp1 := &a{s: "b"}
 	temp2 := &a{s: "c"}
 	d = append(d, temp, temp1, temp2)
-	fmt.Println("before sort:")
+	fmt.Println("before internalSort:")
 	for _, v := range d {
 		fmt.Println(v.s)
 	}
 
 	sort.Sort(byS(d))
 
-	fmt.Println("after sort:")
+	fmt.Println("after internalSort:")
 	for _, v := range d {
 		fmt.Println(v.s)
 	}

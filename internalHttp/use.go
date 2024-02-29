@@ -1,4 +1,4 @@
-package basicHttp
+package internalHttp
 
 import (
 	"bytes"

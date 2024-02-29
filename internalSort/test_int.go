@@ -1,4 +1,4 @@
-package sort
+package internalSort
 
 import (
 	"fmt"
